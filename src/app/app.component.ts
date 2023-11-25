@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Header } from './components/header.component';
+import { Footer } from './components/footer.component';
+import { MainPage } from './pages/main.component';
+import { NgClass } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports:[Header,Footer,MainPage,NgClass,RouterOutlet],
+  standalone:true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'microgreens';
+  bgClassName = "bgDay"
 }

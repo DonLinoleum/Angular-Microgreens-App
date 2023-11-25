@@ -1,0 +1,11 @@
+<div class="header">
+    <div (click)="this.changeBg('bgDay')"><img class="header-side" [src]="'/assets/images/header-sun.png'"></div>
+    <div><a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Main</a></div>
+    <div class="headerMiddleWrapper">
+        <img class="header-middle"
+        #headerImg (click)="changeHeaderImg(headerImg)" 
+        [src]="'/assets/images/header1.png'">
+    </div>
+    <div><a routerLink="/about" routerLinkActive="active-link">About</a></div>
+    <div (click)="this.changeBg('bgNight')"><img class="header-side" [src]="'/assets/images/header-moon.png'"></div>
+</div>
