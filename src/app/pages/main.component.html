@@ -10,29 +10,19 @@
 Your microgreen order will arrive on your doorstep on the Tuesday or Friday following your order depending on your location. It could't be simpler to increase your super nutritious vegetable intake!
       </p>
       <div class="content-cards">
-
-        <div class="content-cards__card">
-          <div class="content-cards__card__img">
-            <img loading="lazy" [src]="'/assets/images/cards/card1.jpg'" />
-          </div>
-          <p>Microgreens: The Insiders Secrets To Growing Gourmet Greens & Building A Wildly Successful Microgreen Business (Smarter Home Gardening). If you are buying microgreens for the first time consider starting with the three mixes: mild, spicy, and complete - containing over 15 varieties in the three pots - we think you'll love them.</p>
-          <div class="content-cards__card__available">
-            <p>BUY NOW! <img class="basket-card" [src]="'/assets/images/wicker-basket.png'" loading="lazy"/></p>
-          </div>
-          <p class="price">20.99$</p>
-        </div>
-
-        <div class="content-cards__card">
-          <div class="content-cards__card__img">
-            <img loading="lazy" [src]="'/assets/images/cards/card2.jpg'" />
-          </div>
-          <p>Microgreens: The Insiders Secrets To Growing Gourmet Greens & Building A Wildly Successful Microgreen Business (Smarter Home Gardening). If you are buying microgreens for the first time consider starting with the three mixes: mild, spicy, and complete - containing over 15 varieties in the three pots - we think you'll love them.</p>
-          <div class="content-cards__card__available">
-            <p>BUY NOW! <img class="basket-card" [src]="'/assets/images/wicker-basket.png'" loading="lazy"/></p>
-          </div>
-          <p class="price">30.99$</p>
-        </div>
-      
+        @if(done){
+          @for (product of products; track product.name){
+            <product
+            [name] = "product.name"
+            [preview_image] = "product.preview_image"
+            [price] = "product.price"
+            [description] = "product.description"
+            ></product>
+          }
+        }
+        @else {
+          <h2>Loading...</h2>
+        } 
       </div>
     </div>
   </main>

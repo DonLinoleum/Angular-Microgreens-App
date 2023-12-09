@@ -1,0 +1,11 @@
+<div class="content-cards__card">
+    <div class="content-cards__card__name">{{name}}</div>
+    <div class="content-cards__card__img">
+        <img loading="lazy" [src]="this.preview_image" />
+    </div>
+    <p>{{description}}</p>
+    <div class="content-cards__card__available">
+      <p>BUY NOW! <img class="basket-card" [src]="'/assets/images/wicker-basket.png'" loading="lazy"/></p>
+    </div>
+    <p class="price">{{price}}$</p>
+  </div>

@@ -7,6 +7,8 @@
     min-height: 80px;
     font-size: 2rem;   
     margin-bottom:50px;
+    box-shadow: 1px 1px 10px black;
+    
 }
 
 .header-side{
@@ -35,6 +37,17 @@
 .headerMiddleWrapper:hover {
     transform: scale(1.05);
 }
+
+.menu-links__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menu-links__wrapper a{
+    text-shadow: 1px 1px 30px rgb(255, 235, 235);
+}
+    
 
 @media (max-width:900px){
     .header-side{
