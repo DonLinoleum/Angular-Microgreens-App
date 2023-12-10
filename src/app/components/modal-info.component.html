@@ -1,0 +1,28 @@
+<div class="modal-wrapper" [ngClass]="{ShowModal:ShowModal}">
+    <div class="modal">
+        <div class="close-button" (click)="close()">X</div>
+        <h3>Enter your contact details. We will contact you!</h3>
+        <div class="send-success" [ngClass]="{ShowSendMessage:showSendedMessage}">Information has been sent! Thank you!</div>
+        <form [formGroup]="modalForm" novalidate (ngSubmit)="submit()">
+            <div class="modal-inputs">
+                <p>Your Name:</p>
+
+                @if (modalForm.controls["userName"].invalid && modalForm.controls["userName"].touched){
+                    <div class="modalError">name not specified</div>
+                }
+
+                <input [(ngModel)]="inputName" name="name" formControlName="userName" placeholder="Your Name..." />
+            </div>
+            <div class="modal-inputs">
+                <p>Your Email:</p>
+
+                @if (modalForm.controls["userEmail"].invalid && modalForm.controls["userEmail"].touched){
+                    <div class="modalError">email not specified</div>
+                }
+
+                <input [(ngModel)]="inputEmail" name="email" formControlName="userEmail" placeholder="example@example.com" />
+            </div>
+            <button [disabled]="modalForm.invalid">Send!</button>
+        </form>
+    </div>
+</div>

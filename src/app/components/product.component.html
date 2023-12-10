@@ -1,4 +1,4 @@
-<div class="content-cards__card">
+<div (click)="openModal()" class="content-cards__card">
     <div class="content-cards__card__name">{{name}}</div>
     <div class="content-cards__card__img">
         <img loading="lazy" [src]="this.preview_image" />
@@ -9,3 +9,4 @@
     </div>
     <p class="price">{{price}}$</p>
   </div>
+  <modal-info [(ShowModal)]="ShowModal"></modal-info>
